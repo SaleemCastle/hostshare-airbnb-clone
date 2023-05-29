@@ -1,10 +1,9 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
-import { ReactComponent as Heart } from '../../assets/heart.svg';
 import RightArrow from '../RightArrow';
+import { ReactComponent as Heart } from '../../assets/heart.svg';
 import { Info } from '../../Models/models';
-import { info } from 'console';
 
 interface IProps {
     category?: string
@@ -12,7 +11,7 @@ interface IProps {
 }
 
 const ListingsCard = (props: IProps) => {
-    const { currency, description, mainImage, price, ratings, location, details, title } = props.info
+    const { currency, mainImage, price, ratings, location, title } = props.info
     return ( 
         <div className='max-w-sm flex flex-col group'>
             <div className='w-full max-h-96 relative'>

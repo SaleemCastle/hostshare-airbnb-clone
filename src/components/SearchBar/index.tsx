@@ -4,10 +4,11 @@ import { BiSearch } from 'react-icons/bi';
 interface IProps {
     onClick: () => void
     searching: boolean
+    minimized?: boolean
 }
 
 const SearchBar = (props: IProps) => {
-    const { onClick, searching } = props
+    const { onClick, searching, minimized } = props
     return (  
         searching
         ?
@@ -34,9 +35,19 @@ const SearchBar = (props: IProps) => {
         </div>
         :
         <div onClick={ onClick } className={`${searching ? 'scale-150' : 'scale-100'} transition-all duration-500 flex p-4 rounded-full w-96 shadow-sm border-2 place-self-center flex-row justify-between h-12 items-center self-center cursor-pointer hover:shadow-md hover:transition-all`}>
-            <h3 className='text-black font-medium font-circular'>Anywhere</h3> <span className='text-gray-400 font-thin'>|</span>
-            <h3 className='text-black font-medium'>Any week</h3> <span className='text-gray-400 font-thin'>|</span>
-            <h3 className='text-gray-500 font-normal'>Add guests</h3>
+            {
+                !minimized
+                ?
+                <>
+                    <h3 className='text-black font-medium font-circular'>Anywhere</h3> <span className='text-gray-400 font-thin'>|</span>
+                    <h3 className='text-black font-medium'>Any week</h3> <span className='text-gray-400 font-thin'>|</span>
+                    <h3 className='text-gray-500 font-normal'>Add guests</h3>
+                </>
+                :
+                <div>
+                    <h3 className='text-black font-medium font-circular'>Start your search</h3> 
+                </div>
+            }
             <span className='w-8 h-8 rounded-full bg-teal-600 items-center justify-center flex'>
                 <BiSearch className='text-white'/>
             </span>

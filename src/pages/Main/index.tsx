@@ -15,8 +15,11 @@ const Main = (): ReactElement => {
     const [payload, setPayload] = useState<Airbnb | null>(null)
 
     useEffect(() => {
-       return !payload ? setPayload(getListings()) : console.log('Data not recieved ');
-    }, [payload])
+        if (payload === null) {
+            setPayload(getListings())
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <> 

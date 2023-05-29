@@ -1,8 +1,9 @@
-import React, { ReactElement, Suspense, lazy } from 'react';
-import ListingsCard from '../ListingsCard';
-import TotalPriceSwitcher from '../TotalPriceSwitcher';
-import { AirbnbDatum } from '../../Models/models';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
+
+import { AirbnbDatum } from '../../Models/models';
+
+import TotalPriceSwitcher from '../TotalPriceSwitcher';
 
 interface IProps {
     listings: AirbnbDatum[] | undefined
@@ -24,7 +25,7 @@ const Listings = (props: IProps) => {
                     const Home = lazy(() => import('../ListingsCard/index'))
                     return (
                         <Suspense fallback={<h1>Loading...</h1>}>
-                            <Link to={''}>
+                            <Link to={`/room/${listing.info.id}`}>
                                 <Home key={ index } info={ listing.info }/>
                             </Link>
                         </Suspense>
