@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoBedOutline, IoPinOutline } from 'react-icons/io5';
+import { IoPinOutline } from 'react-icons/io5';
 
 import RightArrow from '../RightArrow';
 import { Category } from '../../Models/models';
@@ -14,7 +14,7 @@ const Filters = (props: IProps) => {
     const { categories } = props
 
     return (
-        <div className='flex flex-row justify-between items-center pr-10'>
+        <div className='flex flex-row justify-between items-center pr-20 sticky top-[70px] bg-white z-40'>
             <div className='grid grid-flow-col gap-14 mt-5 px-20 justify-start max-w-[95%] overflow-hidden whitespace-nowrap'>
                 {
                     categories

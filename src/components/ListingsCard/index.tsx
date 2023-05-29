@@ -1,16 +1,24 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
 import { ReactComponent as Heart } from '../../assets/heart.svg';
 import RightArrow from '../RightArrow';
+import { Info } from '../../Models/models';
+import { info } from 'console';
 
-const ListingsCard = (): ReactElement => {
+interface IProps {
+    category?: string
+    info: Info
+}
+
+const ListingsCard = (props: IProps) => {
+    const { currency, description, mainImage, price, ratings, location, details, title } = props.info
     return ( 
         <div className='max-w-sm flex flex-col group'>
             <div className='w-full max-h-96 relative'>
                 <div className='rounded-xl min-h-full h-80 flex flex-col justify-between ' style={
                     { 
-                        backgroundImage: 'url(https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=3200%2C2133)', 
+                        backgroundImage: `url(${mainImage.url})`, 
                         backgroundSize: 'cover',
                         backgroundPosition: '50% 50%',
                         backgroundRepeat: 'no-repeat'
@@ -33,18 +41,18 @@ const ListingsCard = (): ReactElement => {
                 </div>
             </div>
             <div className='grid grid-cols-8 pt-5'>
-                <h1 className='font-semibold col-span-7'>Sagle, Idaho</h1>
+                <h1 className='font-semibold col-span-7'>{ `${location.city} ${location.country.title}` }</h1>
                 <div className='flex flex-row justify-end'>
                     <span className='mt-0.5 text-lg font-medium '>
                         <AiFillStar />
                     </span>
-                    <h3> 4.4 </h3>
+                    <h3> { ratings.guestSatisfactionOverall } </h3>
                 </div>
                 
             </div>
 
             <div className='grid grid-cols-8'>
-                <h1 className='col-span-7 text-gray-400'>58 miles away</h1>    
+                <h1 className='col-span-7 text-gray-400'>{ title }</h1>    
             </div>
 
             <div className='grid grid-cols-8'>
@@ -52,7 +60,7 @@ const ListingsCard = (): ReactElement => {
             </div>
 
             <div className='grid grid-cols-8'>
-                <h1 className='col-span-7'><span className='font-semibold'>$320</span> night</h1>    
+                <h1 className='col-span-7'><span className='font-semibold'>{ `$${price} ${currency.code}` }</span> night</h1>    
             </div>
 
         </div>
