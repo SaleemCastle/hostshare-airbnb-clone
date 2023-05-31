@@ -3,7 +3,7 @@ import { TbWorld } from "react-icons/tb";
 
 const Footer = () => {
     return ( 
-        <div className="px-20 py-3 flex flex-row justify-between items-end border-t fixed bottom-0 bg-white w-full">
+        <div className="px-20 py-3 flex flex-row justify-between items-end border-t fixed bottom-0 bg-white w-full max-sm:hidden">
             <div className="flex flex-row items-end">
                 <span className="text-sm">&copy; 2023 Hostshare</span>
                 <p className="flex p-1 items-center justify-center text-sm">.</p>

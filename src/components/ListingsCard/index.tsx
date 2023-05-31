@@ -13,7 +13,7 @@ interface IProps {
 const ListingsCard = (props: IProps) => {
     const { currency, mainImage, price, ratings, location, title } = props.info
     return ( 
-        <div className='max-w-sm flex flex-col group'>
+        <div className='max-w-sm flex flex-col group max-sm:max-w-full'>
             <div className='w-full max-h-96 relative'>
                 <div className='rounded-xl min-h-full h-80 flex flex-col justify-between ' style={
                     { 

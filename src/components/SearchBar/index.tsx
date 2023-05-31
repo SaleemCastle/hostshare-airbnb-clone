@@ -9,10 +9,11 @@ interface IProps {
 
 const SearchBar = (props: IProps) => {
     const { onClick, searching, minimized } = props
+
     return (  
         searching
         ?
-        <div className='grid grid-cols-4 h-20 items-center justify-between max-w-3xl'>
+        <div className='grid grid-cols-4 h-20 items-center justify-between max-w-3xl sm:w-full'>
             <div className='flex flex-row col-start-2'>
                 <div className='relative group mr-3 cursor-pointer'>
                     <h2 className=''>Stays</h2>
@@ -34,7 +35,7 @@ const SearchBar = (props: IProps) => {
             </div>
         </div>
         :
-        <div onClick={ onClick } className={`${searching ? 'scale-150' : 'scale-100'} transition-all duration-500 flex p-4 rounded-full w-96 shadow-sm border-2 place-self-center flex-row justify-between h-12 items-center self-center cursor-pointer hover:shadow-md hover:transition-all`}>
+        <div onClick={ onClick } className={`${searching ? 'scale-150' : 'scale-100'} transition-all duration-500 flex p-4 rounded-full w-96 shadow-sm border-2 place-self-center flex-row justify-between h-12 items-center self-center cursor-pointer hover:shadow-md hover:transition-all max-sm:shadow-lg`}>
             {
                 !minimized
                 ?

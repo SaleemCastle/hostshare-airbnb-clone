@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AirbnbDatum } from '../../Models/models';
 
 import TotalPriceSwitcher from '../TotalPriceSwitcher';
+import CardSkeleton from '../ListingsCard/ListingCardSkeleton';
 
 interface IProps {
     listings: AirbnbDatum[] | undefined
@@ -12,9 +13,24 @@ interface IProps {
 const Listings = (props: IProps) => {
     const { listings } = props
     return ( 
-        <div className='max-w-full pl-20 pr-20 grid grid-flow-row-dense auto-rows-[minmax(min-content,max-content)] grid-cols-4 mt-2 gap-5 3xl:grid-cols-6'>
+        <div className='
+            max-w-full 
+            pl-20 
+            pr-20 
+            grid 
+            grid-flow-row-dense 
+            auto-rows-[minmax(min-content,max-content)] 
+            grid-cols-4 
+            mt-2 
+            gap-5 
+            3xl:grid-cols-6 
+            max-sm:px-4
+            max-sm:flex
+            max-sm:flex-col
+            max-xs:grid
+        '>
 
-            <div className='col-span-4 gap-5 3xl:grid-cols-6 3xl:col-span-6'>
+            <div className='col-span-4 gap-5 3xl:grid-cols-6 3xl:col-span-6 max-sm:grid-cols-none max-sm:gap-0'>
                 <TotalPriceSwitcher />
             </div>
 
@@ -24,7 +40,7 @@ const Listings = (props: IProps) => {
                 listings.map((listing, index) => {
                     const Home = lazy(() => import('../ListingsCard/index'))
                     return (
-                        <Suspense fallback={<h1>Loading...</h1>}>
+                        <Suspense fallback={<CardSkeleton/>}>
                             <Link to={`/room/${listing.info.id}`}>
                                 <Home key={ index } info={ listing.info }/>
                             </Link>
@@ -32,7 +48,7 @@ const Listings = (props: IProps) => {
                     )
                 })
                 :
-                <h1>NO DATA</h1>
+                null
             }
             
         </div>
