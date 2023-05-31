@@ -16,7 +16,7 @@ const Filters = (props: IProps) => {
     const { categories, searchResultsPage } = props
 
     return (
-        <div className={`flex flex-row justify-between items-center pr-20 sticky top-[70px] bg-white z-40 ${props.searchResultsPage ? 'pr-4' : 'pr-20'} border-b max-sm:pr-0 max-sm:border-b-0`}>
+        <div className={`flex flex-row justify-between items-center pr-20 sticky top-[70px] bg-white z-40 ${props.searchResultsPage ? 'pr-4' : 'pr-20'} border-b shadow-lg max-sm:pr-0 max-sm:border-b-0`}>
             <div className={`grid grid-flow-col gap-14 mt-5 pl-20 justify-start max-w-[95%] overflow-hidden overflow-x-scroll no-scrollbar whitespace-nowrap ${props.searchResultsPage ? 'pl-4' : 'pl-20'} max-sm:gap-4 max-sm:pl-4 max-sm:mt-0 max-sm:shadow-lg max-sm:max-w-full`}>
                 {
                     searchResultsPage
