@@ -9,6 +9,7 @@ import Filters from '../../components/Filters';
 import TotalPriceSwitcher from '../../components/TotalPriceSwitcher';
 
 const SearchResults = () => {
+    console.log( process.env.REACT_APP_GOOGLE_MAP_APIKEY )
     let { searchParam } = useParams();
     const listings = getListings().data.filter(listing => {
         const wordArray = searchParam?.split(' ')
@@ -51,7 +52,7 @@ const SearchResults = () => {
                 </div>
                 <div className='flex-[1] bg-[#b3e6f4] h-[530px] sticky top-44'>
                     <GoogleMapReact
-                        bootstrapURLKeys={{ key: "AIzaSyChsyNQMNcQXFJh3ghzdltB4HTKE7OsdsI" }}
+                        bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_APIKEY?.toString() ?? '' }}
                         defaultCenter={ { lat: listings[0].info.location.lat, lng: listings[0].info.location.long } }
                         defaultZoom={ 10 }
                         yesIWantToUseGoogleMapApiInternals

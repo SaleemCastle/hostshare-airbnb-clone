@@ -35,10 +35,10 @@ const Filters = (props: IProps) => {
                         return (
                             <div key={ index } className='flex flex-col items-center justify-between h-20 cursor-pointer group py-3 border-b border-transparent hover:border-gray-300 max-sm:h-16'>
                                 {
-                                    getIcons(category.title, 'text-3xl text-gray-500 group-hover:text-black group-hover:transition-all max-sm:text-[14px]')
+                                    getIcons(category.title, 'text-3xl text-gray-500 group-hover:text-black group-hover:transition-all max-sm:text-[20px]')
                                 }
             
-                                <h3 className='text-center text-gray-500 text-xs font-semibold group-hover:text-black group-hover:transition-all max-sm:text-xs'>{ category.title }</h3>
+                                <h3 className='text-center text-gray-500 text-xs font-semibold group-hover:text-black group-hover:transition-all max-sm:text-xs max-sm:tracking-wider'>{ category.title }</h3>
                             </div>
                         )
                     })

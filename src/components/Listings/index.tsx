@@ -12,14 +12,12 @@ interface IProps {
 
 const Listings = (props: IProps) => {
     const { listings } = props
+    
     return ( 
         <div className='
-            max-w-full 
             pl-20 
             pr-20 
             grid 
-            grid-flow-row-dense 
-            auto-rows-[minmax(min-content,max-content)] 
             grid-cols-4 
             mt-2 
             gap-5 
@@ -27,7 +25,8 @@ const Listings = (props: IProps) => {
             max-sm:px-4
             max-sm:flex
             max-sm:flex-col
-            max-xs:grid
+            max-[550px]:grid
+            max-[550px]:grid-cols-2
         '>
 
             <div className='col-span-4 gap-5 3xl:grid-cols-6 3xl:col-span-6 max-sm:grid-cols-none max-sm:gap-0'>

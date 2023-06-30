@@ -8,6 +8,7 @@ import SearchResultsSkeleton from './pages/SearchResults/SearchResultsSkeleton';
 const Room = lazy(() => import('./pages/Room/index'))
 const SearchResults = lazy(() => import('./pages/SearchResults/index'))
 
+
 function App() {
   return (
     <BrowserRouter>
