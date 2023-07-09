@@ -10,9 +10,9 @@ const TotalPriceSwitcher = (props: IProps) => {
             <div className={props.left ? 'rounded-xl border px-4 py-5 flex-1' : 'rounded-xl border px-4 py-5 col-span-2 col-start-2 3xl:col-start-3 max-sm:col-span-full'}>
                 <div className='flex flex-row justify-between max-sm:items-center'>
                     <div className='flex flex-row max-sm:flex-col'>
-                        <h1 className='font-medium'>Display Total Price</h1> 
+                        <h1 className='font-medium max-[440px]:text-sm'>Display Total Price</h1> 
                         <span className='mx-5 font-thin text-gray-300 max-sm:hidden'>|</span>
-                        <h1 className='text-gray-500'>Include all fees, before taxes</h1>
+                        <h1 className='text-gray-500 max-[440px]:text-sm'>Include all fees, before taxes</h1>
                     </div>
 
                     <div>  

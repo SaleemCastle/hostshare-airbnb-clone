@@ -13,9 +13,9 @@ interface IProps {
 const ListingsCard = (props: IProps) => {
     const { currency, mainImage, price, ratings, location, title } = props.info
     return ( 
-        <div className='max-w-sm flex flex-col group max-sm:max-w-full'>
+        <div className='max-w-sm flex flex-col group'>
             <div className='w-full max-h-96 relative'>
-                <div className='rounded-xl min-h-full h-80 flex flex-col justify-between ' style={
+                <div className='rounded-xl min-h-full h-80 flex flex-col justify-between max-[550px]:h-56 max-[440px]:h-72' style={
                     { 
                         backgroundImage: `url(${mainImage.url})`, 
                         backgroundSize: 'cover',
